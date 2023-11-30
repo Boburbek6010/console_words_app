@@ -1,0 +1,5 @@
+const enUSA = {
+  "welcome": "Welcome",
+};
+
+
