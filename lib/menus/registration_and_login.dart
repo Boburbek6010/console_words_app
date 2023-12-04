@@ -26,14 +26,14 @@ class RegisterAndLogin extends Menu{
 
   @override
   Future<void> build() async {
-    String press;
+
 
     print("\nRegister ");
     print("\nLogin ");
 
-    press = stdin.readLineSync()??"";
+   String press = stdin.readLineSync()??"";
+   registerAndLogin(press);
 
-    Navigator.push(RegisterAndLogin());
 
   }
 
