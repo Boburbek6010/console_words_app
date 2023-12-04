@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:http/http.dart';
 
 class NetworkService{
@@ -23,7 +25,7 @@ class NetworkService{
 
   static Future<String> postData(String baseUrl, String api, Map<String, dynamic> body) async {
     Uri url = Uri.https(baseUrl, api);
-    Response response = await post(url, body: body, headers: headers);
+    Response response = await post(url, body: jsonEncode(body), headers: headers);
 
     if (response.statusCode == 200 || response.statusCode == 201){
       return "Successfully posted: ${response.body}";
