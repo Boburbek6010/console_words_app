@@ -23,7 +23,7 @@ class LoginAdmin extends Menu {
 
   Future<bool> checkLogin(String email, password) async {
     String data = await NetworkService.getData(
-        NetworkService.baseUrl, NetworkService.apiUsers);
+        NetworkService.baseUrlAdmin, NetworkService.apiAdmin);
     List<User> userList = userListFromJson(data);
     for (int i = 0; i < userList.length; i++) {
       if (userList[i].email == email && userList[i].password == password) {

@@ -4,9 +4,10 @@ import 'package:http/http.dart';
 class NetworkService{
 
   static final String baseUrl = "6568a0d49927836bd9752ac3.mockapi.io";
-  static final String baseUrlAdmin = "656dd32ebcc5618d3c240e50.mockapi.io/admin";
+  static final String baseUrlAdmin = "656dd32ebcc5618d3c240e50.mockapi.io";
 
   static final String apiUsers = "/users";
+  static final String apiAdmin = "/admin";
 
   static final String apiDeleteUsers = "/users";
 

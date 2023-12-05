@@ -1,17 +1,16 @@
 import '../models/menus.dart';
-import '../services/language_service.dart';
 
 class MyApp{
 
   static Map<String, Menu> routeMenu = {};
 
-  MyApp({
+  MyApp(Set<dynamic> set, {
     required Menu home,
-    required Map<String, Menu> routes,
-    required Language language,
+    //required Map<String, Menu> routes,
+    //required Language language,
   }){
-    LanguageService.language = language;
-    routeMenu = routes;
+    //LanguageService.language = language;
+    //routeMenu = routes;
     _runApp(home);
   }
 
