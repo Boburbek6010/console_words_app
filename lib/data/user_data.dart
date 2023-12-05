@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+
 List<User> userListFromJson(String data)
 => List<User>.from(jsonDecode(data).map((e)
 => User.fromJson(e)));
@@ -14,12 +15,12 @@ class User{
   late String email;
   late String password;
   late int registerData;
-
+  late bool isBlock;
   User({
     required this.username,
     required this.email,
     required this.password,
-    required this.registerData
+    required this.registerData,
   });
 
   User.fromJson(Map<String, dynamic> json){
@@ -28,14 +29,17 @@ class User{
     email = json["email"];
     password = json["password"];
     registerData = json["registerData"];
+    isBlock = json["isBlock"];
   }
 
   Map<String, dynamic> toJson(){
     Map<String, dynamic> map = {
+      "id": id,
       "username": username,
       "email": email,
       "password": password,
-      "registerData": registerData
+      "registerData": registerData,
+      "isBlock": isBlock
     };
     return map;
   }
@@ -49,11 +53,6 @@ class User{
       Sizning parolingiz: $password 
       Siz dasturimizdan ro'yxatdan o'tgan sana: $registerData
       ''';
-  }
-
-  @override
-  noSuchMethod(Invocation invocation) {
-    print(invocation.memberName);
   }
 
 }
